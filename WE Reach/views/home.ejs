@@ -1,0 +1,1032 @@
+<!-- <html>
+<head>
+    <link rel="stylesheet" href="/css/temp.css"  type="text/css">
+    
+</head>
+<body>
+    
+
+<h1>
+            Codeial / <%= title %>
+        </h1>
+            <form action="/map" method="POST">
+                <select name="typeOfMap">
+                    <option value="restaurants">Restaurants</option>
+                    <option value="library">Library</option>
+                    <option value="office">Office</option>
+                    <option value="restroom">Restroom</option>
+                    <option value="trail">Hand Rail</option>
+                    <option value="elevator">Elevator</option>
+                </select>
+                <button type="submit">SHOW MAP</button>
+            </form>
+        </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>WE-Reach</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="/css/main.css" rel="stylesheet">
+    <style>
+        #first_page{
+            position: relative;
+            left: 100px;
+        }
+        #select{
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="/img/logo.png" alt=""> -->
+                <h1>
+                    <!-- <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/mbcrjouw.json"
+    trigger="hover"
+    colors="primary:#ffffff,secondary:#08a88a"
+    style="width:80px;height:80px">
+</lord-icon> -->
+
+                    WE-Reach
+                </h1>
+                <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/zzcjjxew.json" trigger="hover"
+                    colors="primary:#ffffff,secondary:#4030e8" state="hover-jump" style="width:70px;height:70px">
+
+                </lord-icon>
+
+
+            </a>
+
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#caretaker">Caretakers</a></li>
+
+                    <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
+                                        class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 2</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                        </ul>
+                    </li> -->
+                    <li><a href="#footer">Contact</a></li>
+                    <li><a class="get-a-quote" href="/users/sign-up">For Place Owner </a></li>
+                    <li><a class="get-a-quote sos" href="tel:9416107221">SOS </a></li>
+                    
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+
+            <div class="row gy-4 d-flex justify-content-between">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <br><br>
+                    <br><br>
+                    <h2 data-aos="fade-up">Discover your next accessible destination</h2>
+                    <p data-aos="fade-up" data-aos-delay="100"></p>
+
+
+                    <!-- <form action="/map" method="POST">
+                        <select id="select" name="typeOfMap">
+                            <option value="restaurants">Restaurants</option>
+                            <option value="library">Library</option>
+                            <option value="office">Office</option>
+                            <option value="restroom">Restroom</option>
+                            <option value="trail">Hand Rail</option>
+                            <option value="elevator">Elevator</option>
+                        </select>
+                        <button id="first_page" type="submit">SHOW MAP</button>
+                    </form> -->
+                    <form action="/map" method="POST" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                        data-aos-delay="200">
+                        
+
+                        <label for="typeOfMap" id="Zipcode">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="hover"
+                                colors="primary:#121331,secondary:#3080e8" style="width:55px;height:55px">
+                            </lord-icon>
+                        </label> 
+                        <!-- <img src="1.jpg"> -->
+                        <select  name="typeOfMap" class="form-control" class="form-search d-flex align-items-stretch mb-3"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <option value="restaurant" class="form-control drop"
+                                class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                data-aos-delay="200">Restaurants</option>
+                            <option value="library" class="form-control"
+                                class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                data-aos-delay="200">Library</option>
+                            <option value="office" class="form-control"
+                                class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                data-aos-delay="200">Office</option>
+                            <option value="restroom" class="form-control"
+                                class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                data-aos-delay="200">Restroom</option>
+                            <option value="trail" class="form-control" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                    data-aos-delay="200">Hand Rail</option>
+                            <option value="elevator" class="form-control" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
+                                data-aos-delay="200">Elevator</option>
+                        </select>
+                        <br><br>
+
+
+
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+
+                    <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
+
+                        <div class="col-lg-3 col-6">
+                            <div class="stats-item text-center w-100 h-100">
+                                <span data-purecounter-start="0" data-purecounter-end="232"
+                                    data-purecounter-duration="1" class="purecounter"></span>
+                                <p>Clients</p>
+                            </div>
+                        </div><!-- End Stats Item -->
+
+                        <div class="col-lg-3 col-6">
+                            <div class="stats-item text-center w-100 h-100">
+                                <span data-purecounter-start="0" data-purecounter-end="521"
+                                    data-purecounter-duration="1" class="purecounter"></span>
+                                <p>Markers</p>
+                            </div>
+                        </div><!-- End Stats Item -->
+
+                        <div class="col-lg-3 col-6">
+                            <div class="stats-item text-center w-100 h-100">
+                                <span data-purecounter-start="0" data-purecounter-end="1453"
+                                    data-purecounter-duration="1" class="purecounter"></span>
+                                <p>Total Visit</p>
+                            </div>
+                        </div><!-- End Stats Item -->
+
+                        <div class="col-lg-3 col-6">
+                            <div class="stats-item text-center w-100 h-100">
+                                <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p>Cities</p>
+                            </div>
+                        </div><!-- End Stats Item -->
+
+                    </div>
+                </div>
+                <div id="adhiyyan" class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+                    <!-- <lord-icon
+    src="https://cdn.lordicon.com/mbcrjouw.json"
+    trigger="hover"
+    colors="primary:#ffffff,secondary:#08a88a"
+    style="width:500px;height:500px;">
+</lord-icon> -->
+                    <img src="/img/pics/qwe-removebg-preview.png" class="img-fluid mb-3 mb-lg-0" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section><!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= Featured Services Section ======= -->
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services">
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+                        <!-- <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div> -->
+                        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                        <lord-icon id="wheel" src="https://cdn.lordicon.com/zganwmkl.json" trigger="hover"
+                            colors="outline:#2516c7,primary:#2516c7,secondary:#4030e8" stroke="60"
+                            style="width:300px;height:300px">
+                        </lord-icon>
+                        <div>
+                            <h4 class="title">Diversity & Inclusion</h4>
+                            <p class="description">We make our website accesible to all and ensures that people feel a
+                                sense of belonging and support from the organization.</p>
+                            <!-- <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                    <!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                        <!-- <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div> -->
+                        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                        <lord-icon id="rest" src="https://cdn.lordicon.com/zeabctil.json" trigger="hover"
+                            colors="outline:#121331,primary:#2516c7,secondary:#ebe6ef" stroke="55" state="hover-1"
+                            style="width:220px;height:220px">
+                        </lord-icon>
+                        <div>
+                            <h4 class="title">Customized Maps</h4>
+                            <p class="description">We build cutom maps on the basis of the need of the user and create a
+                                sgregation to make the work hasslefree.</p>
+                            <!-- <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a> -->
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <!-- <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div> -->
+                        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                        <lord-icon id="rest" src="https://cdn.lordicon.com/osbjlbsb.json" trigger="hover"
+                            colors="outline:#121331,secondary:#2516c7,secondary2:#2516c7,quaternary:#ebe6ef"
+                            style="width:220px;height:220px">
+                        </lord-icon>
+                        <div>
+                            <h4 class="title">Accessibility Treasure</h4>
+                            <p class="description">We make our site fully accessible with loads of accessiblibty option
+                                like magnifying glass,color contrast ,screen reader,etc.</p>
+                            <!-- <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a> -->
+                        </div>
+                    </div><!-- End Service Item -->
+
+                </div>
+
+            </div>
+        </section><!-- End Featured Services Section -->
+
+
+        <!-- End Featured Services Section -->
+        <!-- ======= Services Section ======= -->
+        <section id="service" class="services pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <span>Accesibility Item
+                    </span>
+                    <h2>Accesibility Item</h2>
+
+                </div>
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/img/storage-service.jpg" alt="" class="img-fluid">
+                            </div>
+                            <h3>
+                                <a href="/restaurant" class="stretched-link">Restraunt</a>
+                            </h3>
+                            <p>Disable friendly environment with ramps and escalators available.</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/img/library.jpeg" alt="" class="img-fluid">
+                            </div>
+                            <h3><a  href="/library" class="stretched-link">Library</a></h3>
+                            <p>Hi-Tech libraries with braille books available,ramps and hand rails.</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card">
+                            <div class="card-img">
+                                <img id="anshul" src="/img/cargo-service.jpg" alt="" class="img-fluid">
+                            </div>
+                            <h3><a href="/office" class="stretched-link">Office</a></h3>
+                            <p>Latest and advanced technology based system specially for physical challenge aid</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/img/trucking-service.jpg" alt="" class="img-fluid">
+                            </div>
+                            <h3><a href="/restroom" class="stretched-link">Restroom</a></h3>
+                            <p>Rooms with all kind of accessibility features such as ramps,hand rails braille guides</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/img/packaging-service.jpg" alt="" class="img-fluid">
+                            </div>
+                            <h3><a href="/trail" class="stretched-link">Hand Rail</a></h3>
+                            <p>Places which are completely embeded with hand rails all over</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/img/Elevators.jpeg" alt="" class="img-fluid" height="500">
+                            </div>
+                            <h3><a href="/elevator" class="stretched-link">Elevator</a></h3>
+                            <p>Escalators which are extra sensetive to needs of physically challenged people</p>
+                        </div>
+                    </div><!-- End Card Item -->
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+                    <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+                        <!-- <img src="/img/about.jpg" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-YkU_NcV0NE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-6 content order-last  order-lg-first">
+                        <h3>About Us</h3>
+                        <p>
+                            This is an interactive platform for communities of persons with disabilities to make this
+                            world more accessible to them.
+                        </p>
+                        <ul>
+                            <li data-aos="fade-up" data-aos-delay="100">
+                                <i class="bi bi-diagram-3"></i>
+                                <div>
+                                    <h5>A wide range of accessibility features</h5>
+                                    <p>Uswer can have access to various accessibility features such as screen reader,
+                                        screen magnifier,voice navigation,etc.</p>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-fullscreen-exit"></i>
+                                <div>
+                                    <h5>Maps with markers</h5>
+                                    <p>Customized maps with full flexibility such that all the building can be located
+                                        on the map and new registered buildings can be integrated on the map
+                                        automatically.</p>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-broadcast"></i>
+                                <div>
+                                    <h5>Various search option on the basis of user needs</h5>
+                                    <p>User will be provided with various wide range search option such as seaerching
+                                        restrooms nearby,searching tour guides,etc</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Us Section -->
+        <!-- ======= Features Section ======= -->
+        <!-- <section id="features" class="features">
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+
+          <div class="col-md-5">
+            <img src="/img/features-1.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- Features Item -->
+
+        <!-- <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="/img/features-2.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1">
+            <h3>Corporis temporibus maiores provident</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div> -->
+        <!-- Features Item -->
+
+        <!-- <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="/img/features-3.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
+            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- Features Item -->
+
+        <!-- <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="/img/features-4.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1">
+            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div> -->
+        <!-- Features Item -->
+
+        <!-- </div>
+    </section>End Features Section -->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Work Flow</h2><br><br><br>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon id="person_emote" src="https://cdn.lordicon.com/imamsnbq.json" trigger="hover"
+                                colors="primary:#ffffff,secondary:#faf9d1" style="width:200px;height:200px">
+                            </lord-icon>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <!-- <h4>2009-2011</h4> -->
+                                <h4 class="subheading">Login-Signup Page Location</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Providing Login-Signup page and retrieving location of user.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon id="person_emote" src="https://cdn.lordicon.com/wloilxuq.json" trigger="hover"
+                                colors="primary:#ffffff,secondary:#faf9d1" style="width:200px;height:200px">
+                            </lord-icon>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <!-- <h4>March 2011</h4> -->
+                                <h4 class="subheading">Accesibility options</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Various accesibility options like screen reader, colour contrast
+                                    web page filter.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon id="person_emote" src="https://cdn.lordicon.com/pndvzexs.json" trigger="hover"
+                                colors="primary:#ffffff,secondary:#faf9d1" style="width:200px;height:200px">
+                            </lord-icon>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <!-- <h4>December 2015</h4> -->
+                                <h4 class="subheading">Selection portal</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Selection portal for the place where the user wants to visit.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon id="person_emote" src="https://cdn.lordicon.com/fpipqhrr.json" trigger="hover"
+                                colors="primary:#ffffff,secondary:#faf9d1" style="width:200px;height:200px">
+                            </lord-icon>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <!-- <h4>July 2020</h4> -->
+                                <h4 class="subheading">Voice based navigation</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Various navigation features including maps and voice instructions.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li>
+                <div class="timeline-image">
+                  <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                  <lord-icon
+                      src="https://cdn.lordicon.com/gqdnbnwt.json"
+                      trigger="hover"
+                      colors="primary:#ffffff,secondary:#ffffff"
+                      style="width:180px;height:180px">
+                  </lord-icon>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="subheading">User Experience</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Rating and review system</p></div>
+                </div>
+            </li> -->
+                    <li>
+                        <div class="timeline-image">
+                            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/gqdnbnwt.json" trigger="hover"
+                                colors="primary:#ffffff,secondary:#ffffff" style="width:180px;height:180px">
+                            </lord-icon>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">User Experience</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Rating and review system.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ======= Pricing Section ======= -->
+        <section id="caretaker" class="pricing pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <span>Caretaker</span>
+                    <h2>Caretaker</h2>
+
+                </div>
+
+                <div class="row gy-4">
+                    <!-- Caretaker 1 -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-item">
+                            <div class="grid-item">
+                                <article class="post tag-romance featured">
+                                    <div class="wrapgriditem">
+                                        <section class="post-excerpt">
+                                            <p>
+                                                <img style="border-radius: 50%;" src="/img/sahil.jpg" alt=""
+                                                    width="50" height="50"> &nbsp; Sahil Jaura
+                                            </p>
+                                            <p>
+                                                An ex-military man trying to be still useful to the society by
+                                                volunteering for this noble cause
+                                            </p>
+                                            <a class="cta-btn" href="tel:8665562570">Call</a>
+                                        </section>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Caretaker 1 -->
+                    <!-- Caretaker 2 -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-item">
+                            <div class="grid-item">
+                                <article class="post tag-romance featured">
+                                    <div class="wrapgriditem">
+                                        <section class="post-excerpt">
+                                            <p>
+                                                <img style="border-radius: 50%;" src="/img/sahil.jpg" alt=""
+                                                    width="50" height="50"> &nbsp; Sahil Jaura
+                                            </p>
+                                            <p>
+                                                An experienced physician taking care of challenged people. Has a lot of
+                                                experience with physical disabilities.
+                                            </p>
+                                            <a class="cta-btn" href="tel:8665562570">Call</a>
+
+                                        </section>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Caretaker 2 -->
+                    <!-- Caretaker 3 -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-item">
+                            <div class="grid-item">
+                                <article class="post tag-romance featured">
+                                    <div class="wrapgriditem">
+                                        <section class="post-excerpt">
+                                            <p>
+                                                <img style="border-radius: 50%;" src="/img/sahil.jpg" alt=""
+                                                    width="50" height="50"> &nbsp; Sahil Jaura
+                                            </p>
+                                            <p>
+                                                A professional care taker with certification in caring of people with
+                                                developmental disabilities
+                                            </p>
+                                            <a class="cta-btn" href="tel:8665562570">Call</a>
+
+                                        </section>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Caretaker 3 -->
+
+                    <!-- End Pricing Item -->
+
+                    <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3>Business Plan</h3>
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+              <div class="grid-item">
+                <article class="post tag-romance featured">
+                  <div class="wrapgriditem">
+                    <section class="post-excerpt">
+                      <p>
+                          <img style="border-radius: 50%;" src="/img/sahil.jpg" alt="" width="50" height="50" > &nbsp; Sahil Jaura : 9416172456
+                      </p>
+
+
+
+            </div>
+          </div> -->
+                    <!-- End Pricing Item -->
+
+                    <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>Developer Plan</h3>
+              <h4><sup>$</sup>49<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Buy Now</a>
+            </div>
+          </div> -->
+                    <!-- End Pricing Item -->
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Pricing Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+
+                <div class="slides-1 swiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                <h3>David A. Paterson</h3>
+                                <!-- <h4>Ceo &amp; Founder</h4> -->
+                                <!-- <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div> -->
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    I have had this desire my whole life to prove people wrong, to show them I could do
+                                    things they didn’t think I could do.
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                <h3>Jimmy Dean</h3>
+                                <!-- <h4>Designer</h4> -->
+                                <!--         <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div> -->
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    “I can’t change the direction of the wind, but I can adjust my sails to always reach
+                                    my destination”
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                <h3>Stephen Hawking</h3>
+                                <!-- <h4>Store Owner</h4> -->
+                                <!-- <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div> -->
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    Disability need not to be an obstacle to success
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                <h3>Samyak Lalit</h3>
+                                <!-- <h4>Freelancer</h4> -->
+                                <!-- <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div> -->
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    Disability cannot stop me from becoming a complete personality
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <img src="/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                <h3>Stevie Wonder</h3>
+                                <!-- <h4>Entrepreneur</h4> -->
+                                <!-- <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div> -->
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    Just because a man lacks the use of his eyes doesn’t mean he lacks vision.”
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Testimonials Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+        <div class="container" data-aos="fade-up">
+    
+            <div class="section-header">
+                <span>Frequently Asked Questions</span>
+                <h2>Frequently Asked Questions</h2>
+    
+            </div>
+    
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-10">
+    
+                    <div class="accordion accordion-flush" id="faqlist">
+    
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq-content-1">
+                                    <i class="bi bi-question-circle question-icon"></i>
+                                    Can I book a cab using your site only?
+                                </button>
+                            </h3>
+                            <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    Yes,we-reach provide's a complete connection from user's place to target place.
+                                </div>
+                            </div>
+                        </div><!-- # Faq item-->
+    
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq-content-2">
+                                    <i class="bi bi-question-circle question-icon"></i>
+                                    Whom can I contact in case of emergency?
+                                </button>
+                            </h3>
+                            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    We have provided SOS option for you,where you can access and contact any person you
+                                    want.
+                                </div>
+                            </div>
+                        </div><!-- # Faq item-->
+    
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq-content-3">
+                                    <i class="bi bi-question-circle question-icon"></i>
+                                    Can I contact any helper in case of help?
+                                </button>
+                            </h3>
+                            <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    Yes, with the help of caretaker list available at our site you can contact any nearby
+                                    volunteers easily.
+                                </div>
+                            </div>
+                        </div><!-- # Faq item-->
+    
+    
+    
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span>WE-Reach</span>
+                    </a>
+                    
+                    <div class="social-links d-flex mt-4">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Pujab Engineering College <br>
+                        Sector 12, Chandigarh<br>
+                        India <br><br>
+                        <strong>Phone:</strong> +91 7588212764<br>
+                        <strong>Email:</strong> rishabhanan004@gmail.com<br>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Shenanigans</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+            </div>
+        </div>
+
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+
+    <!-- logo -->
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

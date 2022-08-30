@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here's Your Ticket</title>
+    <!-- Reset styles -->
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <!-- Google Fonts Muli -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/ticket.css">
+    <style>
+        .button {
+            background-color: #f1f1f1;
+            /* Green */
+            border: none;
+            color: rgb(11, 21, 220);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .button1:hover {
+            background-color: #2c11dd;
+            color: white;
+        }
+
+        .button1 {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="container">
+            <div class="img__container">
+                <img src="/img/QR.png" alt="salad" class="img">
+            </div>
+            <div class="content">
+                <h1 class="title">Thank you for your visit!</h1>
+                <!--  <input type="text" class="mail" placeholder="Your email address" name="mail" required> -->
+                <a href='/'>
+                    <button class="button button1">Home</button>
+                </a>
+                <!-- <p class="text">Visit Carefree!</p> -->
+            </div>
+        </div>
+    </section>
+</body>
+</body>
+
+</html>

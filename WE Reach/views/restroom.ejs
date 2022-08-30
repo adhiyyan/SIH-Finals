@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map API</title>
+    <link rel="stylesheet" href="/css/tut.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            height: 100vh;
+            /* background-color: rgb(210, 255, 255); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100vw;
+            background-color: antiquewhite;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #foot {
+            display: flex;
+            background-color: rgb(34, 58, 79);
+            justify-content: space-evenly;
+        }
+
+        .button1 {
+            background-color: #868686;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #ff7c57;
+        }
+
+        /* Blue */
+        .button3 {
+            background-color: #4dd0fc;
+        }
+
+        /* Blue */
+        .button4 {
+            background-color: #d8abfa;
+        }
+
+        /* Blue */
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="map">
+
+        </div>
+    </div>
+    <div id="foot">
+        <button id="b1" class="button button1">1</button>
+        <button id="b2" class="button button2">2</button>
+        <button id="b3" class="button button3">3</button>
+        <button id="b4" class="button button4">4</button>
+    </div>
+    <h1 id="takeThis">
+        <%= type_of_map %>
+    </h1>
+    <!-- <script src="/js/tut4.js"></script> -->
+    <script>
+        var db_marker = [
+
+        ]
+        var check = "restroom";
+
+        let x = '30.763147242189106';
+        let y = '76.77451722544487';
+
+        let pecRestroom1x = '30.768114749768127';
+        let pecRestroom1y = '76.78600006721807';
+        let pecRestroom2x = '30.76529410900347';
+        let pecRestroom2y = '76.78596057557192';
+        let pgiRestroom1x = '30.764455542568204';
+        let pgiRestroom1y = '76.77601507573576';
+        let pgiRestroom2x = '30.763436483710073';
+        let pgiRestroom3x = '30.761121055019423';
+        let pgiRestroom3y = '76.77554934855131';
+        let pgiRestroom2y = '76.78040295387147';
+        let puRestroom1x = '30.757999365779074';
+        let puRestroom1y = '76.76761224454314';
+        let puRestroom2x = '30.76149676551792';
+        let puRestroom2y = '76.76977839205183';
+
+
+        let pecOffice1x = '30.765400490294716';
+        let pecOffice1y = '76.78595121211978';
+        let pecOffice2x = '30.767920730989644';
+        let pecOffice2y = '76.78630014467012';
+        let pgiOffice1x = '30.760609841725895';
+        let pgiOffice1y = '76.77692293273938';
+        let pgiOffice2x = '30.763454387304808';
+        let pgiOffice2y = '76.7746518015479';
+        let puOffice1x = '30.762240812795273';
+        let puOffice1y = '76.769429181422';
+        let puOffice2x = '30.757897471197218';
+        let puOffice2y = '76.7682250937204';
+
+
+        let pecRestaurant1x = '30.766118475776082';
+        let pecRestaurant1y = '76.78326701046491';
+        let pgiRestaurant1x = '30.762630005341563';
+        let pgiRestaurant1y = '76.77703637746622';
+        let pgiRestaurant2x = '30.763106407820608';
+        let pgiRestaurant2y = '76.77519152003153';
+        let puRestaurant1x = '30.762575049919008';
+        let puRestaurant1y = '76.76913547331117';
+        let puRestaurant2x = '30.75932230664146';
+        let puRestaurant2y = '76.76818900589'
+
+        let pecTrail1x = '30.766031743487837';
+        let pecTrail1y = '76.78318017762427';
+        let pgiTrail1x = '30.7638972319071';
+        let pgiTrail1y = '76.77460868924244';
+        let puTrail1x = '30.762930486711102';
+        let puTrail1y = '76.76935527295657';
+        let pgiTrail2x = '30.765666152944153';
+        let pgiTrail2y = '76.77708392840628';
+
+        let pecLibrary1x = '30.76718450009541';
+        let pecLibrary1y = '76.7855038505068';
+        let pgiLibrary1x = '30.763472';
+        let pgiLibrary1y = '76.776201';
+        let puLibrary1x = '30.76163913001587';
+        let puLibrary1y = '76.76999211471716';
+
+        let pecElevator1x = '30.765277221296884';
+        let pecElevator1y = '76.78587737100858';
+        let pgiElevator1x = '30.763924440779096';
+        let pgiElevator1y = '76.77616377664906';
+        let pgiElevator2x = '30.760994705971598';
+        let pgiElevator2y = '76.77579320529773';
+        let puElevator1x = '30.75687947594789';
+        let puElevator1y = '76.7665170257818';
+
+        var marker =
+            [
+                {
+                    a: pecRestaurant1x,
+                    b: pecRestaurant1y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/combo.jpeg" width="300" height="247">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Combo Restaurant</h2>' +
+                        '<p>The restaurant with a separate pathway for people</p>' +
+                        '<p>with disabilities is now one place you must try. </p>' +
+                        '<p><a href="https://www.google.com/maps/dir/11.0400084,77.0742389/COMBO,+PUNJAB+ENGINEERING+COLLEGE,+Sector+12,+Chandigarh/@20.643399,69.6730953,5z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390ff281cfcd8c2f:0xed562256fe56b00f!2m2!1d76.7832399!2d30.7661063" target="blank">Navigate</a></p>' +
+                        '</div> ',
+
+                    title: "At PEC Market",
+                    type: "restaurant",
+                },
+                {
+                    a: pgiRestaurant1x,
+                    b: pgiRestaurant1y,
+                    str: '<img src="/img/mess3.jfif" alt="Girl in a jacket" width="320" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sanjeevani Mess</h2>' +
+                        '<p>This elegant terrace restaurant is extremely </p>' +
+                        '<p>disabled friendly with full-fledged wheelchair accessibility.</p>' +
+                        '<a href="https://www.google.com/maps/dir/11.0397266,77.0740892/Sanjeevani+Mess,+Sector+12,+Chandigarh/@20.6848212,67.3753654,5z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x390fed4757ef8aef:0xa5a564ace189d5e5!2m2!1d76.7770471!2d30.7625493!3e2">Navigate</a>' +
+                        '</div> ',
+                    icon: "/img/ramp.png",
+                    title: "Sanjeevani Mess",
+                    type: "restaurant",
+                },
+                {
+                    a: pgiRestaurant2x,
+                    b: pgiRestaurant2y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/mess2.jpg" alt="Girl in a jacket" width="300" height="200">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chennai Maratha</h2>' +
+                        '<p>A family restaurant with all sorts of accessibility </p>' +
+                        '<p>and special-care for disabled people.</p>' +
+                        '<a href="http://google.com/maps/dir/11.0397266,77.0740892/Chennai+Maratha-+Best+South+Indian+Restaurant,+Sector+34C,+Sector+34,+Chandigarh/@20.6635468,67.3753325,5z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x390fed2cc8222f23:0xb665f3a06e623e6d!2m2!1d76.7665038!2d30.7183071!3e2">Navigate</a>' +
+                        '</div> ',
+                    title: "Chennai Maratha",
+                    type: "restaurant",
+                },
+                {
+                    a: puRestaurant1x,
+                    b: puRestaurant1y,
+                    str: '<img src="/img/mess4.jpg"  width="300" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StuC</h2>' +
+                        '<p>College canteen is known for its lively atmosphere</p>' +
+                        '<p>and accessibility for disabled.</p>' +
+                        '<a href="https://www.google.com/maps/dir/11.0399639,77.0741655/Student+Center,+Panjab+University,+Chandigarh,+Panjab+University,+Sector+14,+Chandigarh/@20.6426197,69.6717939,5z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390fedaffecd30c3:0xbe5f78b4bd899f8e!2m2!1d76.7693251!2d30.7621972">Navigate</a>' +
+                        '</div> ',
+                    icon: "/img/ramp.png",
+                    title: "At StuC",
+                    type: "restaurant",
+                },
+                {
+                    a: puRestaurant2x,
+                    str: "sahil",
+                    b: puRestaurant2y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/stucmess.jfif" alt="Girl in a jacket" width="300" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chemistry Canteen</h2>' +
+                        '<p>University canteen is known for its lively atmosphere</p>' +
+                        '<p>and accessibility for disabled.</p>' +
+                        '<a href="https://www.google.com/maps/dir/11.0399639,77.0741655/Chemistry+Canteen,+Chemistry+Canteen,+Panjab+University,+Sector+14,+Chandigarh/@20.6426197,69.6692795,5z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390fed88a0cad719:0x41517ae6a9ea2bf3!2m2!1d76.7681771!2d30.7591455">Navigate</a>' +
+                        '</div> ',
+                    title: "Chemistry Canteen",
+                    type: "restaurant",
+                },
+
+                {
+                    a: pecRestroom1x,
+                    b: pecRestroom1y,
+                    icon: "/img/restroom.png",
+                    title: "At New Academic Block",
+                    str: '<img src="/img/restroom1.jfif" alt="Girl in a jacket" width="310" height="247">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At New Academic Block</h2>' +
+                        '<p>Comfortable place for to sit and rest, specially designed</p>' +
+                        '<p>by keeping physically challenged people in mind.</p>' +
+                        '</div> ',
+                    type: "restroom",
+                },
+                {
+                    a: pecRestroom2x,
+                    b: pecRestroom2y,
+                    icon: "/img/restroom.png",
+                    str: '<img src="/img/restroom2.jfif" alt="Girl in a jacket" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At DSA building</h2>' +
+                        '<p>Comfortable place for to sit and rest, specially designed</p>' +
+                        '<p>by keeping physically challenged people in mind.</p>' +
+                        '</div> ',
+                    title: "At DSA building",
+                    type: "restroom",
+
+                },
+                {
+                    a: pgiRestroom1x,
+                    b: pgiRestroom1y,
+                    icon: "/img/restroom.png",
+                    str: '<img src="/img/restroom3.jfif" width="310" height="200">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Child OPD</h2>' +
+                        '<p>Hospital restroom for disabled and diseased </p>' +
+                        '<p>available at affordable prices.</p>' +
+                        '</div> ',
+                    title: "At Child OPD ",
+                    type: "restroom",
+
+                },
+                {
+                    a: pgiRestroom2x,
+                    b: pgiRestroom2y,
+                    icon: "/img/restroom.png",
+                    str: '<img src="/img/restroom4.jfif" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At New PGI</h2>' +
+                        '<p>Hospital restroom for disabled and diseased </p>' +
+                        '<p>available at affordable prices.</p>' +
+                        '</div> ',
+                    title: "At New PGI",
+                    type: "restroom",
+
+                },
+                {
+                    a: pgiRestroom3x,
+                    b: pgiRestroom3y,
+                    icon: "/img/restroom.png",
+                    str: '<img src="/img/restroom5.jfif"  width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Emergency Ward</h2>' +
+                        '<p>Hospital restroom for disabled and diseased </p>' +
+                        '<p>available at affordable prices.</p>' +
+                        '</div> ',
+                    title: "At Emergency Ward",
+                    type: "restroom",
+
+                },
+                {
+                    a: puRestroom1x,
+                    b: puRestroom1y,
+                    icon: "/img/restroom.png",
+                    str: '<img src="/img/restroom6.jfif" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Near Administration Block</h2>' +
+                        '<p>Specially designed by keeping physically challenged </p>' +
+                        '<p>people in mind with super easy access.</p>' +
+                        '</div> ',
+                    title: "Near Administration Block",
+                    type: "restroom",
+
+                },
+                {
+                    a: puRestroom2x,
+                    b: puRestroom2y,
+                    icon: "/img/restroom.png",
+                    title: "Near StuC Garden",
+                    str: '<img src="/img/restroom2.jfif" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Near StuC Garden</h2>' +
+                        '<p>Specially designed by keeping physically challenged </p>' +
+                        '<p>people in mind with super easy access.</p>' +
+                        '</div> ',
+                    type: "restroom",
+
+                },
+
+                {
+                    a: pecElevator1x,
+                    b: pecElevator1y,
+                    icon: "/img/elevator.png",
+                    title: "At DSA Building",
+                    str: '<img src="/img/escalator.jpg" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At DSA Building</h2>' +
+                        '<p>Escalators with all modern-day technologies/p>' +
+                        '<p> for best support to specially abled people</p>' +
+                        '</div> ',
+                    type: "elevator",
+
+                },
+                {
+                    a: pgiElevator1x,
+                    b: pgiElevator1y,
+                    icon: "/img/elevator.png",
+                    title: "At OPD",
+                    str: '<img src="/img/escalator2.jfif" alt="Girl in a jacket" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At OPD</h2>' +
+                        '<p>Escalators with all modern-day technologies/p>' +
+                        '<p> for best support to specially abled people</p>' +
+                        '</div> ',
+                    type: "elevator",
+
+                },
+                {
+                    a: pgiElevator2x,
+                    b: pgiElevator2y,
+                    icon: "/img/elevator.png",
+                    title: "At Emergency Ward",
+                    str: '<img src="/img/escalator3.jfif" alt="Girl in a jacket" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Emergency Ward</h2>' +
+                        '<p>Escalators with all modern-day technologies/p>' +
+                        '<p> for best support to specially abled people</p>' +
+                        '</div> ',
+                    type: "elevator",
+
+                },
+                {
+                    a: puElevator1x,
+                    b: puElevator1y,
+                    icon: "/img/elevator.png",
+                    title: "At USOL",
+                    str: '<img src="/img/escalator2.jfif" alt="Girl in a jacket" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At USOL</h2>' +
+                        '<p>Escalators with all modern-day technologies/p>' +
+                        '<p> for best support to specially abled people</p>' +
+                        '</div> ',
+                    type: "elevator",
+
+                },
+
+                {
+                    a: pecTrail1x,
+                    b: pecTrail1y,
+                    icon: "/img/trail.png",
+                    str: '<img src="/img/trail.jpg" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At PEC Market</h2>' +
+                        '<p>Hand rails are provided all across the /p>' +
+                        '<p>building for partially disabled people.</p>' +
+                        '</div> ',
+                    title: "At PEC Market",
+                    type: "trail",
+
+                },
+                {
+                    a: pgiTrail1x,
+                    str: '<img src="/img/trail2.jpg" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Near Parking</h2>' +
+                        '<p>Hand rails are provided all across the' +
+                        '<p>building for partially disabled people.</p>' +
+                        '</div> ',
+                    b: pgiTrail1y,
+                    icon: "/img/trail.png",
+                    title: "Near Parking",
+                    type: "trail",
+
+                },
+                {
+                    a: pgiTrail2x,
+                    str: '<img src="/img/trail3.jfif" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;Near Advance Cardiac Center</h2>' +
+                        '<p>Hand rails are provided all across the' +
+                        '<p>building for partially disabled people.</p>' +
+                        '</div> ',
+                    b: pgiTrail2y,
+                    icon: "/img/trail.png",
+                    title: "Near Advance Cardiac Center",
+                    type: "trail",
+
+                },
+                {
+                    a: puTrail1x,
+                    b: puTrail1y,
+                    icon: "/img/trail.png",
+                    str: '<img src="/img/stuc.jpeg" alt="Girl in a jacket" width="270" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At StuC</h2>' +
+                        '<p >&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hand rails are provided all across the' +
+                        '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; building for partially disabled people</p>' +
+                        '</div> ',
+                    title: "At StuC",
+                    type: "trail",
+
+                },
+
+                {
+                    a: pecLibrary1x,
+                    b: pecLibrary1y,
+                    str: '<img src="/img/dsa.jpeg"  width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Near Computer Center</h2>' +
+                        '<p>Library with books written in braille. Padhega</p>' +
+                        '<p> India tabhi to badega India.</p>' +
+                        '</div> ',
+                    icon: "/img/library.png",
+                    title: "Near Computer Center",
+                    type: "library",
+
+                },
+                {
+                    a: pgiLibrary1x,
+                    b: pgiLibrary1y,
+                    str: '<img src="/img/pfilibrary.jfif"  width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tulsi Das Library</h2>' +
+                        '<p>Library with books written in braille. Padhega</p>' +
+                        '<p> India tabhi to badega India.</p>' +
+                        '</div> ',
+                    icon: "/img/library.png",
+                    title: "Tulsi Das Library",
+                    type: "library",
+
+                },
+                {
+                    a: puLibrary1x,
+                    b: puLibrary1y,
+                    str: '<img src="/img/pulibrary.jfif" width="310" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AC Joshi Library</h2>' +
+                        '<p>Library with books written in braille. Padhega</p>' +
+                        '<p> India tabhi to badega India.</p>' +
+                        '</div> ',
+                    icon: "/img/library.png",
+                    title: "AC Joshi Library",
+                    type: "library",
+
+                },
+
+                {
+                    a: pecOffice1x,
+                    b: pecOffice1y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/dsa.jpeg" width="390" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ramp at DSA Office</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "Ramp at DSA Office",
+                    type: "office",
+
+                },
+                {
+                    a: pecOffice2x,
+                    b: pecOffice2y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/nab.jfif" width="400" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ramp at NAB</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "Ramp at NAB",
+                    type: "office",
+
+                }, {
+                    a: pgiOffice1x,
+                    b: pgiOffice1y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/pgi1.jfif" alt="Girl in a jacket" width="390" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Superintendent Office</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "Medical Superintendent Office",
+                    type: "office",
+
+                }, {
+                    a: pgiOffice2x,
+                    b: pgiOffice2y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/post.jfif"  width="390" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;India Post</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "India Post",
+                    type: "office",
+
+                }, {
+                    a: puOffice1x,
+                    b: puOffice1y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/dsw.jfif"  width="390" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dean Students Wellfare</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "Dean Students Wellfare",
+                    type: "office",
+
+                }, {
+                    a: puOffice2x,
+                    b: puOffice2y,
+                    icon: "/img/ramp.png",
+                    str: '<img src="/img/admin.jfif"  width="390" height="250">' +
+                        '<div class="myDiv">' +
+                        '<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administration Block</h2>' +
+                        '<p>Under the Implementation of Persons with Disabilities Act</p>' +
+                        '<p> States/UTs to provide provision for ramps for Persons with Disabilities.</p>' +
+                        '</div> ',
+                    title: "Administration Block",
+                    type: "office",
+
+                },
+            ]
+
+
+        var typeOfMap = "fb9d376db94f95e8";
+
+        var m = document.getElementById("b2");
+        m.addEventListener('click', function s() {
+            // m.style.display='none';
+            typeOfMap = "8fee4e95b0569c93";
+            // alert(typeOfMap);
+            initMap();
+
+        })
+        var p = document.getElementById("b4");
+        p.addEventListener('click', function s() {
+            // m.style.display='none';
+            typeOfMap = "6ad406aeb21d5c4b";
+            // alert(typeOfMap);
+            initMap();
+
+        })
+        var n = document.getElementById("b1");
+        n.addEventListener('click', function s() {
+            // m.style.display='none';
+            typeOfMap = "fb9d376db94f95e8";
+            // alert(typeOfMap);
+            initMap();
+
+        })
+        var o = document.getElementById("b3");
+        o.addEventListener('click', function s() {
+            // m.style.display='none';
+            typeOfMap = "f7aaf8010540ea08";
+            // alert(typeOfMap);
+            initMap();
+
+        })
+
+        function clickOnMarker(marker, str) {
+            const infowindow = new google.maps.InfoWindow({
+                content: str,
+            });
+            marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                    shouldFocus: false,
+                });
+            });
+            return marker;
+        }
+
+        function initMap() {
+            let mapOptions = {
+                center: new google.maps.LatLng(x, y),
+                zoom: 15,
+                mapId: typeOfMap,
+                // minZoom: 14,
+                // maxZoom: 18,
+            }
+
+            let map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+
+            function markerMaker(place, type) {
+                for (let i = 0; i < place.length; i++) {
+                    let markerOptions = {
+                        position: new google.maps.LatLng(place[i].a, place[i].b),
+                        icon: place[i].icon,
+                        title: place[i].title,
+                        optimized: true,
+                        animation: google.maps.Animation.DROP,
+                        map: map
+                    }
+                    if (place[i].type == type) {
+                        var marker = new google.maps.Marker(markerOptions);
+                        marker = clickOnMarker(marker, place[i].str);
+                    }
+                }
+
+
+            }
+            // markerMaker(restroom);
+            // markerMaker(office);
+            // markerMaker(elevator);
+
+            markerMaker(marker, check);
+            // markerMaker(restaurant);
+            // markerMaker(library);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYh8kRVdTzm2_UYKjCx-Pqhilz0vey8yU&callback=initMap">
+    </script>
+
+
+</body>
+
+</html>
+<!-- AIzaSyDYh8kRVdTzm2_UYKjCx-Pqhilz0vey8yU -->
